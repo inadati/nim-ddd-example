@@ -1,0 +1,43 @@
+lang: nim
+spec:
+- location: src
+  upstream:
+    - name: domain
+      upstream:
+        - name: model
+          codefile:
+            - name: character
+
+        - name: repository
+          codefile:
+            - name: character_repository
+
+
+    - name: infrastructure
+      upstream:
+        - name: datastore
+          codefile:
+            - name: builtin_character_repository
+
+
+    - name: usecase
+      codefile:
+        - name: character_usecase
+
+
+    - name: presentation
+      upstream:
+        - name: handler
+          codefile:
+            - name: app_handler
+            - name: character_handler
+
+
+    - name: di
+      codefile:
+        - name: container
+
+
+    - name: datasources
+      codefile:
+        - name: builtin
